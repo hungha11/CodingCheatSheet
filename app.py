@@ -277,8 +277,10 @@ if __name__ == "__main__":
 
     page = st.sidebar.selectbox('Choose a page',
                                 ['Home', 'Streamlit' ,'Algorithmic Trading','Machine learning'])
+    #page title
+    st.markdown("<h1 style='text-align: center; color: orange;'>Coding cheat sheet</h1>", unsafe_allow_html=True)
 
-
+    #background colot
 
     if page == 'Home':
         st.title('Home')

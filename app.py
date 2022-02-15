@@ -106,12 +106,69 @@ def Algo_body():
     close_data = data['close'].dropna()
         ''')
     # Display data
-    col1.subheader('Display data')
+    col1.subheader('Plotting candle chart')
     col1.code('''
-    st.dataframe(my_dataframe)
-    st.table(data.iloc[0:10])
-    st.json({'foo':'bar','fu':'ba'})
-    st.metric(label="Temp", value="273 K", delta="1.2 K")
+    class plot_price_1m_class(object):
+        def __init__(self, symbol):
+            self.symbol = symbol
+    
+        def PlotPrice1m(self):
+            start = '2021-12-27'
+            now = datetime.now()
+            end = now.strftime("%Y-%m-%d")
+            loader = dl.DataLoader(self.symbol, start, end, data_source='VND', minimal=True)
+            pricedata = loader.download()
+    
+            openPrice = pricedata['open'].dropna()
+            closePrice = pricedata['close'].dropna()
+            highPrice = pricedata['high'].dropna()
+            lowPrice = pricedata['low'].dropna()
+            volumeDaily = pricedata['volume'].dropna()
+    
+            dailyInfo = pd.DataFrame()
+            # dailyInfo = pd.concat([openPrice,closePrice,highPrice, lowPrice, volumeDaily], ignore_index=True,  axis=1)
+            dailyInfo['Open'] = openPrice
+            dailyInfo['High'] = highPrice
+            dailyInfo['Low'] = lowPrice
+            dailyInfo['Close'] = closePrice
+            dailyInfo['Volume'] = volumeDaily
+            # ['open', 'high', 'low', 'close', 'volume']
+            # dailyInfo = closePrice
+            # Plot the candle price chart of the stock
+            self.daily = dailyInfo.apply(pd.to_numeric, errors='coerce')
+    
+            # mav: 22 days average
+            fig, axes = mpf.plot(self.daily, type='candle', style='charles', volume=True, mav=3, returnfig=True, figsize = (10,4))
+            title = ('%s | 1 month price chart') % (self.symbol)
+            axes[0].set_title(title)
+    
+            plt.show()
+            return self.daily
+    
+        def interative_plot_1m(self):
+            start = '2021-12-27'
+            now = datetime.now()
+            end = now.strftime("%Y-%m-%d")
+            loader = dl.DataLoader(self.symbol, start, end, data_source='VND', minimal=True)
+            pricedata = loader.download()
+    
+            openPrice = pricedata['open'].dropna()
+            closePrice = pricedata['close'].dropna()
+            highPrice = pricedata['high'].dropna()
+            lowPrice = pricedata['low'].dropna()
+            volumeDaily = pricedata['volume'].dropna()
+    
+            dailyInfo = pd.DataFrame()
+            # dailyInfo = pd.concat([openPrice,closePrice,highPrice, lowPrice, volumeDaily], ignore_index=True,  axis=1)
+            dailyInfo['Open'] = openPrice
+            dailyInfo['High'] = highPrice
+            dailyInfo['Low'] = lowPrice
+            dailyInfo['Close'] = closePrice
+            dailyInfo['Volume'] = volumeDaily
+            # ['open', 'high', 'low', 'close', 'volume']
+            # dailyInfo = closePrice
+            # Plot the candle price chart of the stock
+            self.daily = dailyInfo.apply(pd.to_numeric, errors='coerce')
         ''')
 
     col2.subheader('Risk analysis')

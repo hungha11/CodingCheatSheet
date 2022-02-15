@@ -282,7 +282,7 @@ def ML_sidebar():
         
     - #### English sources:
         - [Machine learning mastery](https://machinelearningmastery.com)
-        - [100 days of  ML code] (https://github.com/Avik-Jain/100-Days-Of-ML-Code)
+        - [100 days of  ML code](https://github.com/Avik-Jain/100-Days-Of-ML-Code)
     """)
     st.sidebar.write("""***""")
     st.sidebar.write("""

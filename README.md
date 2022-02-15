@@ -10,4 +10,4 @@ I will be very happy if someone can help me to improve this cheat sheet. In addi
 
 Contact me at:
 - [Linkedin](https://www.linkedin.com/in/quốc-hùng-hà-6b192b222/)
-- [Gmail](qhung9621@gmail.com)
+- gmail: qhung9621@gmail.com

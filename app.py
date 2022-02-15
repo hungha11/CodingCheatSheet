@@ -1,5 +1,6 @@
 import  streamlit as st
 
+
 # Initial page config
 st.set_page_config(
      page_title='Streamlit cheat sheet',
@@ -252,12 +253,15 @@ def ML_sidebar():
     st.sidebar.write("""***""")
     st.sidebar.write("""
     ### Hosting platform
-    - [Google Colab](https://colab.research.google.com/notebooks/welcome.ipynb)
+    - [Google Collab](https://colab.research.google.com/notebooks/welcome.ipynb)
     """)
 
 
 def ML_body():
     st.write('Machine Learning')
+    st.write('Still working on it')
+
+
 
 if __name__ == "__main__":
 

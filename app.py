@@ -145,30 +145,7 @@ def Algo_body():
             plt.show()
             return self.daily
     
-        def interative_plot_1m(self):
-            start = '2021-12-27'
-            now = datetime.now()
-            end = now.strftime("%Y-%m-%d")
-            loader = dl.DataLoader(self.symbol, start, end, data_source='VND', minimal=True)
-            pricedata = loader.download()
-    
-            openPrice = pricedata['open'].dropna()
-            closePrice = pricedata['close'].dropna()
-            highPrice = pricedata['high'].dropna()
-            lowPrice = pricedata['low'].dropna()
-            volumeDaily = pricedata['volume'].dropna()
-    
-            dailyInfo = pd.DataFrame()
-            # dailyInfo = pd.concat([openPrice,closePrice,highPrice, lowPrice, volumeDaily], ignore_index=True,  axis=1)
-            dailyInfo['Open'] = openPrice
-            dailyInfo['High'] = highPrice
-            dailyInfo['Low'] = lowPrice
-            dailyInfo['Close'] = closePrice
-            dailyInfo['Volume'] = volumeDaily
-            # ['open', 'high', 'low', 'close', 'volume']
-            # dailyInfo = closePrice
-            # Plot the candle price chart of the stock
-            self.daily = dailyInfo.apply(pd.to_numeric, errors='coerce')
+        
         ''')
 
     col2.subheader('Risk analysis')

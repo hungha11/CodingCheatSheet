@@ -32,7 +32,11 @@ if __name__ == "__main__":
     #background colot
 
     if page == 'Home':
-
+        st.write("""
+        #
+        
+        
+        """)
 
         col1,col2 = st.columns(2)
         with col1:

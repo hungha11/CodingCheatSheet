@@ -15,6 +15,15 @@ st.set_page_config(
 
 
 if __name__ == "__main__":
+    st.markdown("""
+    <style>
+    body {
+      background: #ff0099; 
+      background: -webkit-linear-gradient(to right, #ff0099, #493240); 
+      background: linear-gradient(to right, #ff0099, #493240); 
+    }
+    </style>
+        """, unsafe_allow_html=True)
 
     st.markdown(f'''
                 <style>
@@ -32,6 +41,7 @@ if __name__ == "__main__":
     #background colot
 
     if page == 'Home':
+
         st.write("""
         #
         

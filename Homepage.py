@@ -77,12 +77,13 @@ def clock():
 		};
 	</script>
 	<!--/DPDC-->
-	</div><!--Dayspedia.com widget ENDS-->""", height=350)
+	</div><!--Dayspedia.com widget ENDS-->""", height=175)
 def Homepage():
     Home_sidebar()
     Home_body()
 
 def Home_sidebar():
+
     st.sidebar.write("""
     #### Some of my works: \n
     [Github](https://github.com/hungha11) \n
@@ -93,7 +94,9 @@ def Home_sidebar():
 
 
 
+
 def Home_body():
+
     st.write('##### Some of the information about myself:')
     st.write("""
     I am a student at RMIT University in Vietnam. \n
@@ -122,4 +125,3 @@ def Home_body():
         - [plotly](https://plot.ly/python/) \n
         - [mplfinance](https://github.com/matplotlib/mplfinance) \n
     """)
-    clock()

@@ -103,7 +103,7 @@ def Algo_body():
 
 
         ''')
-
+    #col2
     col2.subheader('Risk analysis')
     col2.code('''
     #Data preparation
@@ -145,7 +145,7 @@ def Algo_body():
 
         return index_data, stock_data
     ''')
-
+    #col2
     col2.subheader('Alpha and Beta calculation')
     col2.code('''
         def calculate_alpha():
@@ -215,5 +215,12 @@ def Algo_body():
             return company_dataframe
 
     ''')
+    col3.subheader('Interesting sources')
+    col3.markdown('''
+    <small>[Trading via Image classification](https://arxiv.org/pdf/1907.10046.pdf)</small><br> 
+    <small>[Python for Algorithmic Trading](https://www.amazon.com/Python-Algorithmic-Trading-Cloud-Deployment/dp/149205335X)</small><br> 
+    <small>[ASX portfolio](https://asxportfolio.com)</small><br> 
+    
+    ''', unsafe_allow_html=True)
 
     return None

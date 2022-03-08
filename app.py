@@ -4,6 +4,7 @@ from Streamlit_page import *
 from AlgoTrade import *
 from MachineLearning import *
 from Statistics import *
+from Autotrader import *
 import PIL.Image
 
 # Initial page config
@@ -34,20 +35,16 @@ if __name__ == "__main__":
 
 
     page = st.sidebar.selectbox('Choose a page',
-                                ['Home', 'Streamlit' ,'Algorithmic Trading','Statistics','Machine learning'])
+                                ['Home', 'Streamlit' ,'Algorithmic Trading','Statistics','Machine learning','Autotrader'])
     #page title
     st.markdown("<h1 style='text-align: center; color: orange;'>Coding cheat sheet</h1>", unsafe_allow_html=True)
 
     #background colot
 
     if page == 'Home':
-
         st.write("""
         #
-        
-        
         """)
-
         col1,col2 = st.columns(2)
         with col1:
             Homepage()
@@ -66,3 +63,7 @@ if __name__ == "__main__":
     if page == 'Machine learning':
         st.title('Machine learning')
         MachineLearning()
+    if page == 'Autotrader':
+        st.title('Autotrader')
+        Autotrader()
+
